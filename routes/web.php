@@ -6,18 +6,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\ProductoController;    
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PedidosController;
+
+// Creamos una ruta para listar pedidos
+Route::get('/pedidos',
+  [PedidosController::class, 'listar']
+);
 
 // Creando una ruta para listar clientes
 Route::get('/clientes', 
   [CustomerController::class, 'listar']
 );
-
-
-
-
-
-
-
 
 Route::get('/', function () {
     return view('welcome');
